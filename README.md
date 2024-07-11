@@ -63,14 +63,3 @@ To convert JPG images to PNG, run the following script:
 
 ```sh
 python image_conversion.py
-```
-To convert music formats, run the following script:
-
-```sh
-python music_conversion.py
-```
-
-## Guide
-<p align="center">
-[Watch the tutorial on YouTube](https://youtu.be/nGsk4Rhj2OQ)
-</p>
