@@ -72,5 +72,5 @@ python music_conversion.py
 
 ## Guide
 <p align="center">
- <img width="1000" src="assets/image_conversion.mp4" alt="image_conversion.mp4"/>
+ <img width="1000" src="https://youtu.be/nGsk4Rhj2OQ" alt="image_conversion.mp4"/>
 </p>
