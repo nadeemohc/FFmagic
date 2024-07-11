@@ -1,0 +1,15 @@
+blessed==1.20.0
+emoji==2.12.1
+enlighten==1.12.4
+fastcore==1.5.48
+ghapi==1.0.5
+markdown-it-py==3.0.0
+mdurl==0.1.2
+packaging==24.1
+prefixed==0.7.1
+py-dashing==0.3.dev0
+Pygments==2.18.0
+rich==13.7.1
+six==1.16.0
+typing_extensions==4.12.2
+wcwidth==0.2.13

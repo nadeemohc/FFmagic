@@ -1,0 +1,11 @@
+venv/
+
+.pyc
+
+.vscode/
+
+subprocess/
+
+time/
+
+os/

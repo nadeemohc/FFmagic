@@ -1,5 +1,6 @@
-import os
-import subprocess
+import os, subprocess, time
+from rich import print
+from rich.prompt import Prompt
 
 def convert_files_to_flac(directory, input_extension, output_format, flac_compression_level):
     os.chdir(directory)
@@ -8,8 +9,8 @@ def convert_files_to_flac(directory, input_extension, output_format, flac_compre
             output_filename = os.path.splitext(filename)[0] + "." + output_format
             command = ['ffmpeg', '-i', filename, '-compression_level', flac_compression_level, output_filename]
             subprocess.run(command)
-            print(f'Converted {filename} to {output_filename}')
-    print("FLAC Conversion Completed")
+            print(f'[bold green]Converted {filename} to {output_filename}[/]')
+    print("[bold green]FLAC Conversion Completed[/]")
 
 def convert_files_to_mp3(directory, input_extension, output_format, mp3_bitrate):
     os.chdir(directory)
@@ -18,8 +19,8 @@ def convert_files_to_mp3(directory, input_extension, output_format, mp3_bitrate)
             output_filename = os.path.splitext(filename)[0] + "." + output_format
             command = ['ffmpeg', '-i', filename, '-b:a', mp3_bitrate, output_filename]
             subprocess.run(command)
-            print(f'Converted {filename} to {output_filename}')
-    print('MP3 Conversion Completed')
+            print(f'[bold green]Converted {filename} to {output_filename}')
+    print('[bold green]MP3 Conversion Completed[/]')
 
 def mp3_to_flac(directory, input_extension, output_format, flac_compression_level):
     os.chdir(directory)
@@ -28,27 +29,28 @@ def mp3_to_flac(directory, input_extension, output_format, flac_compression_leve
             output_filename = os.path.splitext(filename) [0] + "." + output_format
             command = ['ffmpeg', '-i', filename, '-compression_level', flac_compression_level, output_filename]
             subprocess.run(command)
-            print(f'Converted {filename} to {output_filename}')
-    print('FLAC Conversion Completed')
+            print(f'[bold green]Converted {filename} to {output_filename}[/]')
+    print('[bold green]FLAC Conversion Completed[/]')
 
 
 def remove_duplicates(directory, input_extension):
-    query = input('Remove all the duplicate files? (y/n): ').strip().lower()
+    query = Prompt.ask('[bold yellow]Remove all the duplicate files? (y/n): [/]').strip().lower()
     if query == 'y':
         for filename in os.listdir(directory):
             if filename.endswith(input_extension):
                 file_path = os.path.join(directory, filename)
                 os.remove(file_path)
-                print(f"Removed {file_path}")
+                print(f"[bold green]Removed {file_path}[/]")
     else:
-        print("No files were removed.")
+        print("[bold red]No files were removed.[/]")
 
 def main():
-    print('Welcome to Music Converter')
-    
-    directory = input("Enter the path of your Music Folder: ").strip()
+    print('[green]Welcome to [/][bold red] [underline]Music Converter[/][/]')    
+    directory = Prompt.ask('[yellow]Enter the path of your[/][bold red][underline] Music Folder: [/][/]').strip()
     if not os.path.isdir(directory):
-        print("Invalid directory path. Exiting...")
+        print('[bold green]Invalid directory path.[/]')
+        time.sleep(2)
+        print('[bold red]Exiting...[/]')
         return
     
     print("Select conversion format:")
