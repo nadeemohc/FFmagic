@@ -8,10 +8,10 @@ Welcome to the **Make It Simple** project! This repository contains various Pyth
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Scripts](#scripts)
-- [Contributing](#contributing)
+- [Guide](#guide)
+<!-- - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
+- [Contact](#contact) -->
 
 ## Project Description
 
@@ -69,3 +69,5 @@ To convert music formats, run the following script:
 ```sh
 python music_conversion.py
 ```
+
+## Guide
