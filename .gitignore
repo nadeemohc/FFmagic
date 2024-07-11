@@ -1,11 +1,25 @@
+# Ignore the virtual environment directory
 venv/
 
-.pyc
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
 
+# Ignore system files
+.DS_Store
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore OS and editor specific files
+Thumbs.db
 .vscode/
+.idea/
+*.swp
+*.swo
 
-subprocess/
-
-time/
-
+# Ignore the Python packages and modules you mentioned (if they were mistakenly added)
 os/
+subprocess/
+time/
