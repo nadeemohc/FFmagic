@@ -1,6 +1,6 @@
-# Make It Simple
+# FFmagic
 
-Welcome to the **Make It Simple** project! This repository contains various Python scripts to simplify and automate tasks such as image and music conversion.
+Welcome to the **FFmagic** project! This repository contains various Python scripts to simplify and automate tasks such as image and music conversion.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Welcome to the **Make It Simple** project! This repository contains various Pyth
 
 ## Project Description
 
-**Make It Simple** aims to provide easy-to-use Python scripts for everyday automation tasks. Currently, the project includes:
+**FFmagic** aims to provide easy-to-use Python scripts for everyday automation tasks. Currently, the project includes:
 - Image conversion (JPG to PNG)
 - Music conversion and management
 
