@@ -5,7 +5,7 @@ from rich import print
 from rich.prompt import Prompt
 from music_conversion import remove_duplicates  # Uncomment if needed
 
-def jpg_to_png(directory, input_extension, output_format):
+def convert_images(directory, input_extension, output_format):
     os.chdir(directory)
     for filename in os.listdir(directory):
         if filename.endswith(input_extension):
@@ -13,17 +13,7 @@ def jpg_to_png(directory, input_extension, output_format):
             command = ['ffmpeg', '-i', filename, output_filename]
             subprocess.run(command)
             print(f'[bold green]Converted {filename} to {output_filename}[/]')
-    print('[bold white]PNG conversion completed[/]')
-
-def jpeg_to_png(directory, input_extension, output_format):
-    os.chdir(directory)
-    for filename in os.listdir(directory):
-        if filename.endswith(input_extension):
-            output_filename = os.path.splitext(filename)[0] + output_format
-            command = ['ffmpeg', '-i', filename, output_filename]
-            subprocess.run(command)
-            print(f'[bold green]Converted {filename} to {output_filename}[/]')
-    print('[bold white]PNG conversion completed[/]')
+    print(f'[bold white]{output_format.upper()} conversion completed[/]')
 
 def main():
     print('[bold green]Welcome to the[/][bold red][underline] Image Converter[/][/]')
@@ -42,18 +32,19 @@ def main():
     if choice == '1':
         input_extension = '.jpg'
         output_format = '.png'
-        jpg_to_png(directory, input_extension, output_format)
     elif choice == '2':
         input_extension = '.jpeg'
         output_format = '.png'
-        jpeg_to_png(directory, input_extension, output_format)    
     else:
         print('[bold green]Invalid choice.[/]')
         time.sleep(2)
         print('[bold red]Exiting...[/]')
         return
 
-    remove_duplicates(directory, input_extension)  # Uncomment if needed
+    convert_images(directory, input_extension, output_format)
+
+    # Uncomment the following line if you need to remove duplicates
+    remove_duplicates(directory, input_extension)
 
 if __name__ == "__main__":
     main()
